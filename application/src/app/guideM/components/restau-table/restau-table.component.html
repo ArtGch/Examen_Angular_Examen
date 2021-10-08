@@ -1,0 +1,18 @@
+<h2>Liste des Restaurants </h2>
+<table>
+  <tr>
+    <th>Nom</th>
+    <th> Adresse </th>
+    <th> Etoiles </th>
+    <th> Accéder </th>
+  </tr>
+  <!-- Cas particulier ici : let i = index permet de récupérer l'index de l'élément courant dans la liste.
+       Par exemple, si c'est le premier element, i vaudra 0, si c'est le deuxième, il vaudra 1, etc... -->
+  <tr *ngFor="let rest of restau; let i = index" [appRestaurantEvalDirect] = "calculMoyenne(i)" >
+    <td>{{rest.nom}}</td>
+    <td>{{rest.adresse}}</td>
+    <td>{{calculMoyenne(i)}}</td>
+    <td> <a href="/restaurant/id={{rest.id}}"> Accéder </a></td>
+  </tr>
+</table>
+

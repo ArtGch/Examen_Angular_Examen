@@ -1,0 +1,16 @@
+<h2>Ajouter un restaurant </h2>
+
+<form #form="ngForm" (ngSubmit)="submit()">
+
+  <div>
+    <label for="title">Nom du restau : </label>
+    <input #nomRestauInput="ngModel" type="text" id="title" name="title" required [(ngModel)]="restaurant.nom">
+    <span *ngIf="nomRestauInput.invalid && nomRestauInput.errors && nomRestauInput.errors.required" style="color: red">Le champs est requis</span>
+  </div>
+  <div>
+    <label for="commentaire"> Adresse restaurant </label>
+    <input #adresseInput="ngModel" type="text" id="commentaire" name="commentaire" required [(ngModel)]="restaurant.adresse">
+    <span *ngIf="adresseInput.invalid && adresseInput.errors && adresseInput.errors.required" style="color: red">Le champs est requis</span>
+  </div>
+  <input type="submit">
+</form>
